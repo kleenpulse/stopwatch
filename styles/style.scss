@@ -1,0 +1,115 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+    outline: none;
+    transition: all 400ms ease;
+    user-select: none;
+}
+
+:root {
+    --blue: #050728;
+    --orange: rgb(255, 98, 0);
+    --blue2: rgb(0, 234, 255);
+    --purple: #ff08b1;
+    // theme colors
+    --bg: var(--blue);
+    --gradient: linear-gradient(90deg, var(--orange), var(--blue2), var(--purple));
+    --gradient2: linear-gradient(90deg, #0ff, var(--purple));
+}
+
+body {
+    background: var(--bg);
+    color: white;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+
+    .watch {
+        // background: #fff;
+        border-radius: 20px;
+        width: fit-content;
+        text-align: center;
+        padding: 2rem;
+        position: relative;
+        box-shadow: inset -10px -10px 2px rgb(1, 4, 31),
+            10px 6px 12px rgba(0, 0, 0, 0.854),
+            -10px -10px 20px rgb(3, 24, 96);
+
+        h1 {
+            text-transform: uppercase;
+            font-weight: 400;
+            background: var(--gradient);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: brightness(130%);
+            @media (max-width:466px) {
+                font-size: 23px;
+            }
+        }
+    }
+
+    .btns {
+        margin-top: 3rem;
+
+        .btn {
+            padding: 5px 15px;
+            margin-right: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 12px;
+            border: none;
+            color: white;
+            letter-spacing: 1.2px;
+            font-size: large;
+            cursor: pointer;
+            background: var(--gradient2);
+
+            &:hover {
+                scale: 1.1;
+            }
+            &:active{
+                scale: 0.9;
+            }
+        }
+    }
+}
+
+.timer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    // width: 200px;
+    span {
+        font-size: 1.5rem;
+        width: 50px;
+        background: var(--gradient2);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: brightness(130%);
+
+        &:first-child {
+            width: 100px;
+        }
+    }
+}
+
+.disable {
+    cursor: not-allowed;
+    filter: grayscale(1) brightness(0.4);
+}
+.foo{
+    position: absolute;
+    bottom: 1em;
+    width: 100%;
+    text-align: center;
+}
